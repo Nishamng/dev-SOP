@@ -1,5 +1,5 @@
 
-**Kubernetes Installation SOP**
+**Kubernetes Installation SOP - Unmanged method**
 
 This SOP outlines the steps to install Kubernetes on a cluster. The following commands should be executed on the respective nodes: 
 master and worker.

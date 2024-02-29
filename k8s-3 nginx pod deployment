@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+     app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+
+*****To apply - run below command ******
+kubectl apply -f <nginx-deployment.yaml> 
+                    filename
+
+***** list available pods *****
+kubectl get pod
+
+****scale up and down the number of pods*****
+kubectl scale deployment nginx-deployment --replicas=10
+
+******describe deployment ******
+ kubectl describe deployment <nginx-deployment>
+
+
+

@@ -25,7 +25,7 @@ Once the docker image is build, start the docker image using the host network an
   
       FROM nginx:1.10.1-alpine
       COPY index.html /usr/share/nginx/html
-      EXPOSE 80
+      EXPOSE 8080
       CMD ["nginx", "-g", "daemon off;"]
   
     index.html (create any sample html page)
@@ -37,7 +37,7 @@ Once the docker image is build, start the docker image using the host network an
     docker images
 
   7: Build and deploy the container
-     docker run -d --name <name-container> -p 80:80 <new_image_name>
+     docker run -d --name <name-container> -p 8080:80 <new_image_name>
   
   8: Check if the container was successfully created
      docker ps -a
